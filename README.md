@@ -1,9 +1,9 @@
 # OpenSky REST API
 
 [![Build Status](https://github.com/xRubin/OpenExchangeRates/workflows/CI/badge.svg)](https://github.com/xRubin/OpenExchangeRates/actions)
-[![Latest Stable Version](http://poser.pugx.org/rubin/openexchangerates/v)](https://packagist.org/packages/rubin/openexchangerates)
+[![Latest Stable Version](https://img.shields.io/github/v/release/xRubin/OpenExchangeRates)](https://packagist.org/packages/rubin/openexchangerates)
 [![Coverage Status](https://coveralls.io/repos/github/xRubin/OpenExchangeRates/badge.svg?branch=master)](https://coveralls.io/github/xRubin/OpenExchangeRates?branch=master)
-[![PHP Version Require](http://poser.pugx.org/rubin/openexchangerates/require/php)](https://packagist.org/packages/rubin/openexchangerates)
+[![PHP Version Require](https://img.shields.io/badge/php-8.2-777BB3)](https://packagist.org/packages/rubin/openexchangerates)
 
 PHP implementation for the [OpenExchangeRates.org](https://openexchangerates.org/) REST API.
 This library is based on the [REST API docs](https://docs.openexchangerates.org/reference/api-introduction).

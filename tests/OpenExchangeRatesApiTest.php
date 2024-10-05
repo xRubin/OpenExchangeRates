@@ -49,6 +49,14 @@ final class OpenExchangeRatesApiTest extends TestCase
         $this->assertNotEquals($origin, $api->getMapper());
     }
 
+    public function testCanChangeClient()
+    {
+        $api = new OpenExchangeRatesApi('{APP_ID}');
+        $origin = $api->getClient();
+        $api->setClient(new Client(['base_uri' => 'http://localhost/']));
+        $this->assertNotEquals($origin, $api->getClient());
+    }
+
     public function testCanParseLatest()
     {
         $mock = new MockHandler([
@@ -119,6 +127,25 @@ final class OpenExchangeRatesApiTest extends TestCase
                 'ALL' => 111.863334
             ]
         ), $api->getHistorical(new \DateTimeImmutable('2012-07-10')));
+    }
+
+    public function testCanParseCurrencies()
+    {
+        $mock = new MockHandler([
+            new Response(200, [], json_encode([
+                'AED' => 'United Arab Emirates Dirham',
+                'AFN' => 'Afghan Afghani',
+                'ALL' => 'Albanian Lek',
+            ])),
+        ]);
+
+        $api = new OpenExchangeRatesApi('{APP_ID}');
+        $api->setClient(new Client(['handler' => HandlerStack::create($mock)]));
+        $this->assertEquals([
+            'AED' => 'United Arab Emirates Dirham',
+            'AFN' => 'Afghan Afghani',
+            'ALL' => 'Albanian Lek',
+        ], $api->getCurrencies());
     }
 
     public function testCanParseUsage()
