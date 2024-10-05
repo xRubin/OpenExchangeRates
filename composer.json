@@ -1,0 +1,38 @@
+{
+  "name": "rubin/openexchangerates",
+  "description": "OpenExchangeRates API connector",
+  "keywords": [
+    "OpenExchangeRates",
+    "API"
+  ],
+  "authors": [
+    {
+      "name": "Roman Shashurin",
+      "email": "dalamar84@mail.ru"
+    }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=8.2.0",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.0",
+    "cuyz/valinor": "^1.13"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11",
+    "php-coveralls/php-coveralls": "^2.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "OpenExchangeRates\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --testdox --display-deprecations tests"
+  }
+}
