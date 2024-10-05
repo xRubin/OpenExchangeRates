@@ -2,6 +2,7 @@
 
 namespace tests;
 
+use CuyZ\Valinor\MapperBuilder;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -38,6 +39,14 @@ final class OpenExchangeRatesApiTest extends TestCase
         $this->assertFalse($api->isShowAlternative());
         $api->setShowAlternative(true);
         $this->assertTrue($api->isShowAlternative());
+    }
+
+    public function testCanChangeMapper()
+    {
+        $api = new OpenExchangeRatesApi('{APP_ID}');
+        $origin = $api->getMapper();
+        $api->setMapper((new MapperBuilder())->enableFlexibleCasting()->mapper());
+        $this->assertNotEquals($origin, $api->getMapper());
     }
 
     public function testCanParseLatest()
