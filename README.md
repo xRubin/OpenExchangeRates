@@ -1,4 +1,4 @@
-# OpenSky REST API
+# OpenExchangeRates REST API
 
 [![Build Status](https://github.com/xRubin/OpenExchangeRates/workflows/CI/badge.svg)](https://github.com/xRubin/OpenExchangeRates/actions)
 [![Latest Stable Version](https://img.shields.io/github/v/release/xRubin/OpenExchangeRates)](https://packagist.org/packages/rubin/openexchangerates)
