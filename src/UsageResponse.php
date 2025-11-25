@@ -2,11 +2,11 @@
 
 namespace OpenExchangeRates;
 
-readonly class UsageResponse
+class UsageResponse
 {
     public function __construct(
-        public int       $status,
-        public UsageData $data
+        public readonly int       $status,
+        public readonly UsageData $data
     )
     {
     }

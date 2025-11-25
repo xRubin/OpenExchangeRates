@@ -2,7 +2,7 @@
 
 namespace OpenExchangeRates;
 
-readonly class UsageData
+class UsageData
 {
     /**
      * @param string $app_id The app ID you provided
@@ -11,10 +11,10 @@ readonly class UsageData
      * @param UsageInformation $usage Usage information for this app ID
      */
     public function __construct(
-        public string           $app_id,
-        public string           $status,
-        public PlanInformation  $plan,
-        public UsageInformation $usage
+        public readonly string           $app_id,
+        public readonly string           $status,
+        public readonly PlanInformation  $plan,
+        public readonly UsageInformation $usage
     )
     {
     }

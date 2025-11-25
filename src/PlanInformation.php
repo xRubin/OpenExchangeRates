@@ -2,7 +2,7 @@
 
 namespace OpenExchangeRates;
 
-readonly class PlanInformation
+class PlanInformation
 {
     /**
      * @param string $name The name of the current plan
@@ -11,10 +11,10 @@ readonly class PlanInformation
      * @param array<string, bool> $features The supported features of this plan (base, symbols, experimental, time-series, convert)
      */
     public function __construct(
-        public string $name,
-        public string $quota,
-        public string $update_frequency,
-        public array $features,
+        public readonly string $name,
+        public readonly string $quota,
+        public readonly string $update_frequency,
+        public readonly array $features,
     )
     {
     }

@@ -2,7 +2,7 @@
 
 namespace OpenExchangeRates;
 
-readonly class UsageInformation
+class UsageInformation
 {
     /**
      * @param int $requests Number of requests made since month start
@@ -13,12 +13,12 @@ readonly class UsageInformation
      * @param int $daily_average Average requests per day
      */
     public function __construct(
-        public int $requests,
-        public int $requests_quota,
-        public int $requests_remaining,
-        public int $days_elapsed,
-        public int $days_remaining,
-        public int $daily_average,
+        public readonly int $requests,
+        public readonly int $requests_quota,
+        public readonly int $requests_remaining,
+        public readonly int $days_elapsed,
+        public readonly int $days_remaining,
+        public readonly int $daily_average,
     )
     {
     }
