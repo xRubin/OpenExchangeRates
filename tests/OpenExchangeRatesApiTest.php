@@ -45,7 +45,7 @@ final class OpenExchangeRatesApiTest extends TestCase
     {
         $api = new OpenExchangeRatesApi('{APP_ID}');
         $origin = $api->getMapper();
-        $api->setMapper((new MapperBuilder())->enableFlexibleCasting()->mapper());
+        $api->setMapper((new MapperBuilder())->allowPermissiveTypes()->mapper());
         $this->assertNotEquals($origin, $api->getMapper());
     }
 
